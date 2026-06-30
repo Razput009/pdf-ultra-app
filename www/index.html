@@ -2610,7 +2610,6 @@ function _createStickyEl(layer, id, x, y, text, pageNum){
   if(!text) s.querySelector('textarea').focus();
 
   // Save text changes to annotations
-  const ta = s.querySelector('textarea');
   ta.addEventListener('input',()=>{
     if(!state.annotations[pageNum]) return;
     const a = state.annotations[pageNum].find(a=>a.id===id);
