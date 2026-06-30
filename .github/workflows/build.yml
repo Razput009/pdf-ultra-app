@@ -18,7 +18,7 @@ jobs:
     - run: npm install -g cordova@12
     - run: cordova platform add android@12
     - run: cordova build android
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
         name: PDF-Ultra-APK
         path: platforms/android/app/build/outputs/apk/debug/app-debug.apk
