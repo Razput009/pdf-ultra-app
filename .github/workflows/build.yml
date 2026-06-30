@@ -6,6 +6,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - name: Install compatible Gradle
+      run: |
+        wget -q https://services.gradle.org/distributions/gradle-8.14.2-bin.zip -P /tmp
+        unzip -q -d $HOME/gradle-dist /tmp/gradle-8.14.2-bin.zip
+        echo "$HOME/gradle-dist/gradle-8.14.2/bin" >> $GITHUB_PATH
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
       with:
