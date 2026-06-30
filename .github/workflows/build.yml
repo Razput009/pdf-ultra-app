@@ -22,6 +22,8 @@ jobs:
     - uses: android-actions/setup-android@v2
     - run: npm install -g cordova@12
     - run: cordova platform add android@12
+    - name: Install Android build-tools 33.0.2
+      run: yes | sdkmanager "build-tools;33.0.2"
     - run: cordova build android
     - uses: actions/upload-artifact@v4
       with:
